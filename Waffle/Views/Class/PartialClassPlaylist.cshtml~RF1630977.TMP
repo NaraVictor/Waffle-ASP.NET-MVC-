@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Waffle.Data.ClassTopic>
+
+
+<table class="table table-hover accordion" id="accordionExample">
+    <caption>Playlist</caption>
+    @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+
+                <table>
+
+                    @foreach (var lit in item.Playlists)
+                    {
+                        <tr>
+                            <td>
+                                @lit.Title
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+            <td>
+                <span class="fa fa-toggle-down" data-toggle="collapse" data-target="#@item.TopicId" aria-expanded="true" aria-controls="@item.TopicId">
+                </span>
+
+
+
+
+            </td>
+
+
+
+        </tr>
+
+
+
+        }
+
+</table>
