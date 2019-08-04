@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Waffle.Data.ClassTopic>
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <table class="table table-hover">
+        @foreach (var item in Model)
+            {
+
+            var id = item.Topic.ToString().Substring(0, 2) + item.TopicId;
+
+            <tr class="p-0">
+                <td colspan="2">
+                    @Html.DisplayFor(modelItem => item.Topic)
+                    <table class="table table-borderless text-secondary collapse" id="@id">
+                        @foreach (var list in item.Playlists)
+                            {
+                            <tr>
+                                <td class="p-1">
+                                    <span class="fa fa-play-circle-o"></span>
+                                    @Html.DisplayFor(m => list.Title)
+                                </td>
+                            </tr>
+                            }
+                    </table>
+                </td>
+                <td>
+                    <a href="#@id" data-toggle="collapse" aria-expanded="false" aria-controls="@id">
+                        <span class="fa fa-chevron-down text-primary"></span>
+                    </a>
+                </td>
+
+            </tr>
+            }
+
+    </table>
+    <p class="text-secondary">click on <span class="fa fa-chevron-down"></span> to expand playlist</p>
+</div>
+

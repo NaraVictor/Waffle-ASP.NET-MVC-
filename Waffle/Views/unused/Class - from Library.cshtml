@@ -1,0 +1,70 @@
+﻿@model Waffle.Data.Class
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+
+
+
+
+@* video player *@
+<section class="row bg-dark mt-1">
+    <article class="video-player col-md-6 col-12">
+        <video poster="@Url.Content(Model.PosterSrc)" class="img-fluid pt-1">
+            Your browser does not support HTML 5 Video... please upgrade to the latest version of your
+            browser or install a new browser (Chrome, Firefox, Edge or Safari recommended)
+        </video>
+    </article>
+
+    <article class="playlist col-md-6 col-12">
+        <div class="pre-scrollable overflow-hidden">
+
+
+            @* PLAYLIST WILL GO HERE *@
+
+
+        </div>
+        <h4>
+            Your browser does not support HTML 5 Video... please upgrade to the latest version of your
+            browser or install a new browser (Chrome, Firefox, Edge or Safari recommended)
+
+            @* Give it a fixed size and allow playlist to be scrollable *@
+        </h4>
+    </article>
+</section>
+
+
+@* small banner *@
+<section class="row mt-1">
+    <div class="col-12 bg-dark d-inline-flex p-3 text-sm-center">
+        <a href="#" class="text-decoration-none text-light pr-5">
+            <span class="fa fa-bookmark-o"></span>  About 
+        </a>
+        <a href="#" class="text-decoration-none text-light pr-5">
+            <span class="fa fa-comment-o"></span>  Discussions 
+        </a>
+        <a href="#" class="text-decoration-none text-light">
+            <span class="fa fa-file-archive-o"></span>  Resources
+        </a>
+    </div>
+</section>
+
+
+@* Other info *@
+<section class="row">
+    <article class="col">
+        <h4>About @Model.Title  --- somewhere down here</h4>
+        <p>kinda container for tab</p>
+    </article>
+    
+</section>
+
+
+
+
+
+
+
+
+

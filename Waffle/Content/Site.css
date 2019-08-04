@@ -1,0 +1,201 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*--------------------------------------------------------------
+# Responsive Media Queries
+--------------------------------------------------------------*/
+
+
+@media (max-width: 991px) {
+
+    #intro {
+        padding: 140px 0 60px 0;
+    }
+
+        #intro .intro-img {
+            width: 100%;
+            float: none;
+            margin: 0 auto 25px auto;
+        }
+
+        #intro .intro-info {
+            width: 80%;
+            float: none;
+            margin: auto;
+            text-align: center;
+        }
+}
+
+@media (max-width: 767px) {
+    #intro .intro-info {
+        width: 100%;
+        padding: 2px 0 0 0;
+    }
+
+        #intro .intro-info h2 {
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+
+    #intro .intro-img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 574px) {
+    #intro {
+        padding: 100px 0 0 0;
+    }
+
+        #intro .intro-img {
+            width: 350px;
+        }
+
+        #intro .intro-info {
+            padding: 0 5px 0 0;
+        }
+}
+
+
+
+
+/*--------------------------------------
+    Intro Section
+--------------------------------------*/
+
+#intro .intro-info h2 span {
+    color: #74b5fc;
+    text-decoration: underline;
+}
+
+
+#intro .intro-info .mybtn {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff;
+}
+
+#intro .intro-info .mybtn {
+    background: #007bff;
+    border: 2px solid #007bff;
+    color: #fff;
+}
+
+    #intro .intro-info .mybtn:hover {
+        background: none;
+        border-color: #fff;
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+#intro {
+    width: 100%;
+    position: relative;
+    background: url("../Assets/waffle/img/intro-bg.png") center bottom no-repeat;
+    background-size: cover;
+    padding: 90px 0 50px 0;
+}
+
+#intro-bg {
+    margin-top: 0px;
+    position: relative;
+}
+
+.intro-img {
+    max-width: 40%;
+    float: left;
+    margin-top: 1px;
+}
+
+/*---------------------------------------
+    End of Intro 
+----------------------------------------*/
+
+
+/*---------------------------------------
+    Library
+-----------------------------------------*/
+
+/*.flex-container {
+    background: white;
+    margin: 0 auto;
+    padding: 5%;
+    width:300px;
+}*/
+
+
+/*.crop {
+ height: 300px;
+ width: 400px;
+ overflow: hidden;
+}*/
+
+/*.crop img {
+ height: auto;
+ width: auto;
+}*/
+
+
+
+/*img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.flex-pics {
+  display: flex;
+}*/
+
+
+
+
+
+/*---------------------------------------
+    End of Library
+-----------------------------------------*/
+
+
+
+
+/*
+User Class Playlist
+*/
+
+.card{
+    border: 3px solid red;
+}
+
+

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Waffle</title>
+    <link href="~/Assets/waffle/img/Waffle 2.png" type="image/x-icon" rel="icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-md mt-0 navbar-dark bg-primary">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="@Url.Action("Index","Home")" class="navbar-brand">
+                    <img src="~/Assets/waffle/img/Waffle 1.png" alt="Waffle Logo" 
+                         class="img-fluid" title="Waffle Logo" width="100" height="70" />
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" 
+                        data-target="#wafflenav" aria-controls="#wafflenav" aria-expanded="false"
+                        aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="wafflenav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home",null, new { @class= "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Library","Index","Library", null, new { @class = "nav-link" })</li>
+                </ul>
+                @Html.ActionLink("Create Class", "New", "Class", null, new { @class = "btn btn-outline-light" })
+
+
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+        </div>
+    </nav>
+
+    <main class="body-content container">
+            @RenderBody()
+        <hr class="dl-horizontal" />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Waffle</p>
+        </footer>
+    </main>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

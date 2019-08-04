@@ -1,0 +1,92 @@
+﻿
+@model Waffle.ViewModels.ClassVM
+
+
+
+@if (Model.PosterSrc != null)
+    {
+    <img src="@Url.Content(Model.PosterSrc)" alt="@Model.Title" width="700" height="600" class="img-fluid" id="classPoster" />
+    }
+
+
+@Html.HiddenFor(m => m.ClassId)
+@Html.HiddenFor(m => m.DateCreated)
+@Html.HiddenFor(m => m.PosterSrc)
+
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col text-secondary" })
+    <div class="col">
+        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control col-md-11" } })
+        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.LevelId, "Skill Level", new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.DropDownListFor(model => model.LevelId, new SelectList(Model.Levels, "ClassLevelId", "Title"), "Select Level", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LevelId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.TypeId, "Type", htmlAttributes: new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.DropDownListFor(model => model.TypeId, new SelectList(Model.Types, "ClassTypeId", "Title"), "Select Type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TypeId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-3">
+        @Html.LabelFor(model => model.CategoryId, "Category", htmlAttributes: new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.Categories, "ClassCategoryId", "Name"), "Select Category", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            <span class="small text-primary">Currency: USD ($) </span>
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Requirements, htmlAttributes: new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.EditorFor(model => model.Requirements, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Requirements, "", new { @class = "text-danger" })
+            <span class="small text-primary">(e.g. Photoshop, Programming, drawing, singing etc)</span>
+        </div>
+    </div>
+
+
+    <div class="form-group col-md-3">
+        @Html.LabelFor(model => model.TargetStudents, htmlAttributes: new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.EditorFor(model => model.TargetStudents, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TargetStudents, "", new { @class = "text-danger" })
+            <span class="small text-primary">(e.g. everyone, C# programmers, etc)</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-md-11">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col text-secondary" })
+        <div class="col">
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control col-12", rows = "5" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>

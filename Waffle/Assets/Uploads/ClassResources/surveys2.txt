@@ -1,0 +1,23 @@
+uk.toluna.com 
+	username: naravictor
+	password: Survey!9
+
+Opinion Panel
+	Gmail
+	username: Nara
+	pwd: Op!ni0n
+
+hiving
+	username: nara
+	password: Hivinat!0n
+
+prolific
+	Country: Gh
+	Gmail
+	password: Pr0l!7ic
+	Id: 5d3fbd9655efbe001592c0a1
+	Email: 5d3fbd9655efbe001592c0a1@email.prolific.co
+
+paidviewpoint.com
+	username: nara
+	password: Pr0l!7ic

@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{259C9317-269D-4EC7-85DE-F6E4AE1157C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Waffle.Repository</RootNamespace>
+    <AssemblyName>Waffle.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Concrete\ClassCategoryRepository.cs" />
+    <Compile Include="Concrete\ClassLevelRepository.cs" />
+    <Compile Include="Concrete\ClassRepository.cs" />
+    <Compile Include="Concrete\ClassResourcesRepository.cs" />
+    <Compile Include="Concrete\ClassTopicRepository.cs" />
+    <Compile Include="Concrete\ClassTypeRepository.cs" />
+    <Compile Include="Concrete\ClassPlaylistRepository.cs" />
+    <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Concrete\UserRepository.cs" />
+    <Compile Include="Interface\IClassCategoryRepository.cs" />
+    <Compile Include="Interface\IClassLevelRepository.cs" />
+    <Compile Include="Interface\IClassRepository.cs" />
+    <Compile Include="Interface\IClassResourcesRepository.cs" />
+    <Compile Include="Interface\IClassTypeRepository.cs" />
+    <Compile Include="Interface\IClassPlaylist.cs" />
+    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Interface\IClassTopicRepository.cs" />
+    <Compile Include="Interface\IUser.cs" />
+    <Compile Include="Migrations\201905221724416_InitialModel.cs" />
+    <Compile Include="Migrations\201905221724416_InitialModel.Designer.cs">
+      <DependentUpon>201905221724416_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905221802279_AddedClassCategoriesTable.cs" />
+    <Compile Include="Migrations\201905221802279_AddedClassCategoriesTable.Designer.cs">
+      <DependentUpon>201905221802279_AddedClassCategoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905240457071_ClassDescriptionRequired.cs" />
+    <Compile Include="Migrations\201905240457071_ClassDescriptionRequired.Designer.cs">
+      <DependentUpon>201905240457071_ClassDescriptionRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905240458251_ClassCategorySamplesLoading.cs" />
+    <Compile Include="Migrations\201905240458251_ClassCategorySamplesLoading.Designer.cs">
+      <DependentUpon>201905240458251_ClassCategorySamplesLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905241510225_UpdateDateCreatedToNullable.cs" />
+    <Compile Include="Migrations\201905241510225_UpdateDateCreatedToNullable.Designer.cs">
+      <DependentUpon>201905241510225_UpdateDateCreatedToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905250059564_ChangedVideoSrcToVideoPath.cs" />
+    <Compile Include="Migrations\201905250059564_ChangedVideoSrcToVideoPath.Designer.cs">
+      <DependentUpon>201905250059564_ChangedVideoSrcToVideoPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905250108102_RemovedPlaylistOrderRequiredAttribute.cs" />
+    <Compile Include="Migrations\201905250108102_RemovedPlaylistOrderRequiredAttribute.Designer.cs">
+      <DependentUpon>201905250108102_RemovedPlaylistOrderRequiredAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905250109027_ChangedOrderToInt.cs" />
+    <Compile Include="Migrations\201905250109027_ChangedOrderToInt.Designer.cs">
+      <DependentUpon>201905250109027_ChangedOrderToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905250112003_AddedTitleFieldToPlaylistTable.cs" />
+    <Compile Include="Migrations\201905250112003_AddedTitleFieldToPlaylistTable.Designer.cs">
+      <DependentUpon>201905250112003_AddedTitleFieldToPlaylistTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905261754497_AddedRangeAttributeToPlaylistAndTopicOrderField.cs" />
+    <Compile Include="Migrations\201905261754497_AddedRangeAttributeToPlaylistAndTopicOrderField.Designer.cs">
+      <DependentUpon>201905261754497_AddedRangeAttributeToPlaylistAndTopicOrderField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271235239_AddedNewFieldsToClassTable.cs" />
+    <Compile Include="Migrations\201905271235239_AddedNewFieldsToClassTable.Designer.cs">
+      <DependentUpon>201905271235239_AddedNewFieldsToClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271241224_AddedClassLevelTable.cs" />
+    <Compile Include="Migrations\201905271241224_AddedClassLevelTable.Designer.cs">
+      <DependentUpon>201905271241224_AddedClassLevelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271254380_SetDateCreatedFieldToRequired.cs" />
+    <Compile Include="Migrations\201905271254380_SetDateCreatedFieldToRequired.Designer.cs">
+      <DependentUpon>201905271254380_SetDateCreatedFieldToRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271350111_AddedClassResourcesTable.cs" />
+    <Compile Include="Migrations\201905271350111_AddedClassResourcesTable.Designer.cs">
+      <DependentUpon>201905271350111_AddedClassResourcesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271357151_ClassResourcesToContext.cs" />
+    <Compile Include="Migrations\201905271357151_ClassResourcesToContext.Designer.cs">
+      <DependentUpon>201905271357151_ClassResourcesToContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271359572_ResourcesTitleandPathRequired.cs" />
+    <Compile Include="Migrations\201905271359572_ResourcesTitleandPathRequired.Designer.cs">
+      <DependentUpon>201905271359572_ResourcesTitleandPathRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271411283_textDependant.cs" />
+    <Compile Include="Migrations\201905271411283_textDependant.Designer.cs">
+      <DependentUpon>201905271411283_textDependant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905271422466_RemovedResourcesIdFromClassTable.cs" />
+    <Compile Include="Migrations\201905271422466_RemovedResourcesIdFromClassTable.Designer.cs">
+      <DependentUpon>201905271422466_RemovedResourcesIdFromClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905272358492_AddedClassTypeTable.cs" />
+    <Compile Include="Migrations\201905272358492_AddedClassTypeTable.Designer.cs">
+      <DependentUpon>201905272358492_AddedClassTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905280049032_PopulatingClassTypesAndLevels.cs" />
+    <Compile Include="Migrations\201905280049032_PopulatingClassTypesAndLevels.Designer.cs">
+      <DependentUpon>201905280049032_PopulatingClassTypesAndLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905300654180_AddedClassDiscussionTable.cs" />
+    <Compile Include="Migrations\201905300654180_AddedClassDiscussionTable.Designer.cs">
+      <DependentUpon>201905300654180_AddedClassDiscussionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906211902500_UpdateClassRequiredFields.cs" />
+    <Compile Include="Migrations\201906211902500_UpdateClassRequiredFields.Designer.cs">
+      <DependentUpon>201906211902500_UpdateClassRequiredFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906211930079_MakeClassTitleUnique.cs" />
+    <Compile Include="Migrations\201906211930079_MakeClassTitleUnique.Designer.cs">
+      <DependentUpon>201906211930079_MakeClassTitleUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906211953333_MadeClassFKNullable.cs" />
+    <Compile Include="Migrations\201906211953333_MadeClassFKNullable.Designer.cs">
+      <DependentUpon>201906211953333_MadeClassFKNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907260936155_CategoryTypeLevelRequired.cs" />
+    <Compile Include="Migrations\201907260936155_CategoryTypeLevelRequired.Designer.cs">
+      <DependentUpon>201907260936155_CategoryTypeLevelRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907260937289_ClassLevelIdRequired.cs" />
+    <Compile Include="Migrations\201907260937289_ClassLevelIdRequired.Designer.cs">
+      <DependentUpon>201907260937289_ClassLevelIdRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907261024495_ClassTitleRequired.cs" />
+    <Compile Include="Migrations\201907261024495_ClassTitleRequired.Designer.cs">
+      <DependentUpon>201907261024495_ClassTitleRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907261726493_ClassTitleRangeChangedToMaxLength.cs" />
+    <Compile Include="Migrations\201907261726493_ClassTitleRangeChangedToMaxLength.Designer.cs">
+      <DependentUpon>201907261726493_ClassTitleRangeChangedToMaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907300154125_MadeClassResourcesIdPK.cs" />
+    <Compile Include="Migrations\201907300154125_MadeClassResourcesIdPK.Designer.cs">
+      <DependentUpon>201907300154125_MadeClassResourcesIdPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908030434193_ClassAndResourcesOneToMany.cs" />
+    <Compile Include="Migrations\201908030434193_ClassAndResourcesOneToMany.Designer.cs">
+      <DependentUpon>201908030434193_ClassAndResourcesOneToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Concrete\WaffleContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905221724416_InitialModel.resx">
+      <DependentUpon>201905221724416_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905221802279_AddedClassCategoriesTable.resx">
+      <DependentUpon>201905221802279_AddedClassCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240457071_ClassDescriptionRequired.resx">
+      <DependentUpon>201905240457071_ClassDescriptionRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240458251_ClassCategorySamplesLoading.resx">
+      <DependentUpon>201905240458251_ClassCategorySamplesLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905241510225_UpdateDateCreatedToNullable.resx">
+      <DependentUpon>201905241510225_UpdateDateCreatedToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250059564_ChangedVideoSrcToVideoPath.resx">
+      <DependentUpon>201905250059564_ChangedVideoSrcToVideoPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250108102_RemovedPlaylistOrderRequiredAttribute.resx">
+      <DependentUpon>201905250108102_RemovedPlaylistOrderRequiredAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250109027_ChangedOrderToInt.resx">
+      <DependentUpon>201905250109027_ChangedOrderToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250112003_AddedTitleFieldToPlaylistTable.resx">
+      <DependentUpon>201905250112003_AddedTitleFieldToPlaylistTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905261754497_AddedRangeAttributeToPlaylistAndTopicOrderField.resx">
+      <DependentUpon>201905261754497_AddedRangeAttributeToPlaylistAndTopicOrderField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271235239_AddedNewFieldsToClassTable.resx">
+      <DependentUpon>201905271235239_AddedNewFieldsToClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271241224_AddedClassLevelTable.resx">
+      <DependentUpon>201905271241224_AddedClassLevelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271254380_SetDateCreatedFieldToRequired.resx">
+      <DependentUpon>201905271254380_SetDateCreatedFieldToRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271350111_AddedClassResourcesTable.resx">
+      <DependentUpon>201905271350111_AddedClassResourcesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271357151_ClassResourcesToContext.resx">
+      <DependentUpon>201905271357151_ClassResourcesToContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271359572_ResourcesTitleandPathRequired.resx">
+      <DependentUpon>201905271359572_ResourcesTitleandPathRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271411283_textDependant.resx">
+      <DependentUpon>201905271411283_textDependant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905271422466_RemovedResourcesIdFromClassTable.resx">
+      <DependentUpon>201905271422466_RemovedResourcesIdFromClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905272358492_AddedClassTypeTable.resx">
+      <DependentUpon>201905272358492_AddedClassTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905280049032_PopulatingClassTypesAndLevels.resx">
+      <DependentUpon>201905280049032_PopulatingClassTypesAndLevels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300654180_AddedClassDiscussionTable.resx">
+      <DependentUpon>201905300654180_AddedClassDiscussionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906211902500_UpdateClassRequiredFields.resx">
+      <DependentUpon>201906211902500_UpdateClassRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906211930079_MakeClassTitleUnique.resx">
+      <DependentUpon>201906211930079_MakeClassTitleUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906211953333_MadeClassFKNullable.resx">
+      <DependentUpon>201906211953333_MadeClassFKNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907260936155_CategoryTypeLevelRequired.resx">
+      <DependentUpon>201907260936155_CategoryTypeLevelRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907260937289_ClassLevelIdRequired.resx">
+      <DependentUpon>201907260937289_ClassLevelIdRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907261024495_ClassTitleRequired.resx">
+      <DependentUpon>201907261024495_ClassTitleRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907261726493_ClassTitleRangeChangedToMaxLength.resx">
+      <DependentUpon>201907261726493_ClassTitleRangeChangedToMaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300154125_MadeClassResourcesIdPK.resx">
+      <DependentUpon>201907300154125_MadeClassResourcesIdPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908030434193_ClassAndResourcesOneToMany.resx">
+      <DependentUpon>201908030434193_ClassAndResourcesOneToMany.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Waffle.Data\Waffle.Data.csproj">
+      <Project>{62bf2de0-bae8-431d-acad-6f6e3e7a84e8}</Project>
+      <Name>Waffle.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

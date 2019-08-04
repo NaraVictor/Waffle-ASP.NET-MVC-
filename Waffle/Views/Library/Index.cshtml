@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Waffle.Data.Class>
+
+@{
+    ViewBag.Title = "Library";
+}
+
+<section>
+    <h2>Class Library</h2>
+
+    @*<p>
+        @Html.ActionLink("My Playlist", "MyPlaylist", "User", new { userId ="1"}, new { @class="btn btn-secondary"})
+    </p>*@
+</section>
+
+<section class="row">
+
+    <article class="col">
+        <h5>a mini-menu to enable search, category filter etc</h5>
+    </article>
+
+</section>
+
+
+
+<section class="row">
+    @foreach (var cls in Model)
+        {
+            <a href="@Url.Action("index","class", new {title = cls.Title})" class="mr-2 mb-2 library-item  shadow col-md-3 col  text-decoration-none">
+                <article>
+                    <div class="class">
+                        <div class="class-img">
+                            <div class="class-type">
+                                @{if (cls.Types.Title == "Free")
+                                        {
+                                        <span class="class-free">@cls.Types.Title</span>}
+                                    else
+                                        {
+                                        <span class="class-premium">@cls.Types.Title</span>}
+                                }
+                            </div>
+                            <div class="crop">
+                                <img src="@Url.Content(cls.PosterSrc)" class="img-fluid" alt="@cls.Title" />
+                            </div>
+                        </div>
+                        <div class="class-info">
+                            <h3>@cls.Title</h3>
+                            <p class="text-truncate">@cls.Description</p>
+                            <p>Author Name here <span class="badge badge-primary">@cls.UserId - Courses</span></p>
+                            <p>@cls.Price</p>
+                        </div>
+                        <div class="class-footer">
+                            <p class="text-muted small">
+                                @cls.Categories.Name
+                            </p>
+                        </div>
+
+                    </div>
+                </article>
+
+            </a>
+
+                                    }
+</section>

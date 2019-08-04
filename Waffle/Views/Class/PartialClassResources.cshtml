@@ -1,0 +1,50 @@
+﻿@model Waffle.ViewModels.ClassResourcesVM
+
+
+<div class="pb-3"></div>
+
+@using (Ajax.BeginForm("AddResources", "Class",null, new AjaxOptions
+    {
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "allresources",
+    LoadingElementId = "ajaxloader2",
+    OnFailure = "ajaxFailed('#loadStatus', 'resource')",
+    OnSuccess = "ajaxSuccess('#loadStatus','Resource')",
+    AllowCache = false
+
+    }, new { enctype = "multipart/form-data" }))
+
+    {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ClassId)
+
+
+    <div class="fallback">
+        <input name="Upload" type="file" />
+    </div>
+
+    <div class="align-content-center pt-2">
+        <button type="submit" class="btn btn-outline-success form-control" id="submitResources">
+            Upload Resource
+            <span class="fa fa-upload"></span>
+        </button>
+    </div>
+
+    <div id="ajaxloader2" class=" text-center" style="display:none;">
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    }
+
+<h4 id="loadStatus" class="text-center"></h4>
+
+<div id="allresources">
+
+    @{ Html.RenderPartial("PartialAllClassResources", Model);}
+
+</div>
+
+
+

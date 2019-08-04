@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waffle", "Waffle\Waffle.csproj", "{15F9651F-73EE-4B60-8999-F4B6D201A4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waffle.Repository", "Waffle.Repository\Waffle.Repository.csproj", "{259C9317-269D-4EC7-85DE-F6E4AE1157C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waffle.Data", "Waffle.Data\Waffle.Data.csproj", "{62BF2DE0-BAE8-431D-ACAD-6F6E3E7A84E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15F9651F-73EE-4B60-8999-F4B6D201A4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F9651F-73EE-4B60-8999-F4B6D201A4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F9651F-73EE-4B60-8999-F4B6D201A4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F9651F-73EE-4B60-8999-F4B6D201A4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259C9317-269D-4EC7-85DE-F6E4AE1157C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259C9317-269D-4EC7-85DE-F6E4AE1157C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259C9317-269D-4EC7-85DE-F6E4AE1157C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259C9317-269D-4EC7-85DE-F6E4AE1157C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62BF2DE0-BAE8-431D-ACAD-6F6E3E7A84E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62BF2DE0-BAE8-431D-ACAD-6F6E3E7A84E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62BF2DE0-BAE8-431D-ACAD-6F6E3E7A84E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62BF2DE0-BAE8-431D-ACAD-6F6E3E7A84E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

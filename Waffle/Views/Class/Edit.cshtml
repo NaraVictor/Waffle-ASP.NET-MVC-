@@ -1,0 +1,84 @@
+﻿@model Waffle.ViewModels.ClassVM
+
+@{
+    //Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewBag.Title = "Edit Class";
+}
+
+<h2 class="pl-2">Edit Class</h2>
+
+<article class="col-12 pl-0 pr-0">
+
+    <nav class="pt-3">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-basic-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-selected="true">
+                <span class="fa fa-bookmark"></span>
+                About
+            </a>
+            <a class="nav-item nav-link" id="nav-playlist-tab" data-toggle="tab" href="#playlist" role="tab" aria-controls="playlist" aria-selected="false">
+                <span class="fa fa-comment"></span>
+                Playlist
+            </a>
+            <a class="nav-item nav-link" id="nav-resources-tab" data-toggle="tab" href="#resources" role="tab" aria-controls="resources" aria-selected="false">
+                <span class="fa fa-file-archive-o"></span>
+                Resources
+            </a>
+
+        </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+
+        <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="nav-basic-tab">
+
+            <section class="pb-4">
+                @using (Html.BeginForm("EditClass", "Class", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                    @Html.AntiForgeryToken()
+
+                    <p class="text-danger">
+                        @ViewBag.err
+                    </p>
+
+
+                    <article class="col-12">
+                        <div class="form-horizontal">
+
+
+                            @{Html.RenderPartial("PartialEditAndNew", Model);}
+
+
+                            <div class="form-group col-md-11">
+                                <div class="float-right">
+                                    <input type="submit" value="Update" class="btn btn-success" />
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                                    }
+
+            </section>
+        </div>
+
+        <div class="tab-pane fade" id="playlist" role="tabpanel" aria-labelledby="nav-playlist-tab">
+            @{ Html.RenderAction("Topics", new { classId = Model.ClassId });}
+        </div>
+
+        <div class="tab-pane fade" id="resources" role="tabpanel" aria-labelledby="nav-resources-tab">
+            @{ Html.RenderAction("Resources", new { classId = Model.ClassId });}
+        </div>
+    </div>
+
+</article>
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @*<script src="~/Scripts/dropzone/dropzone.min.js"></script>*@
+    <script src="~/Scripts/App/script.js"></script>
+}

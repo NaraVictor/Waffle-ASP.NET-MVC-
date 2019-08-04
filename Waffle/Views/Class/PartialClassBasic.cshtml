@@ -1,0 +1,69 @@
+﻿@model Waffle.Data.Class
+
+
+
+<table class="table table-striped">
+    <tbody>
+
+        <tr>
+            <th>
+                Category
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Categories.Name)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Level
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Levels.Title)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Type
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Types.Title)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Price)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Target Students
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.TargetStudents)
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Requirements)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Requirements)
+            </td>
+
+    </tbody>
+</table>
+
+<h4 class="text-info">
+    Description
+</h4>
+<hr />
+<p class="text-justify">
+    @Model.Description
+</p>
+
+
+

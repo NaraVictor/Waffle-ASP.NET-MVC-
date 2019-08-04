@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Waffle.ViewModels.MyPlayListVM>
+
+@{
+    ViewBag.Title = "Playlist";
+}
+
+<div class="mt-5">
+
+</div>
+
+@foreach (var cls in Model)
+    {
+    <a href="@Url.Action("Index","Class", new {id = cls.ClassId})" class="text-decoration-none">
+
+        <div class="border-0 card bg-light mb-3" style="max-width: 640px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="@Url.Content(cls.PosterSrc)" class="card-img" alt="@cls.Title">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@cls.Title</h5>
+                        <p class="card-text"><small class="text-muted">@cls.DateCreated</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <hr />
+    }
+

@@ -1,0 +1,53 @@
+﻿
+@model Waffle.ViewModels.TopicVM
+
+
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <table class="table table-hover">
+        @foreach (var item in Model.AllTopics)
+            {
+
+            var id = item.Topic.ToString().Substring(0, 2) + item.TopicId;
+
+            <tr class="p-0">
+                <td colspan="2">
+                    @Html.DisplayFor(modelItem => item.Topic)
+                    @*<table class="table table-borderless text-secondary collapse" id="@id">
+                            @foreach (var list in item.Playlists)
+                                {
+                                <tr>
+                                    <td class="p-1">
+                                        <span class="fa fa-play-circle-o"></span>
+                                        @Html.DisplayFor(m => list.Title)
+                                    </td>
+                                </tr>
+                                }
+                        </table>*@
+                </td>
+                <td width="110">
+                    <a href="#@id" data-toggle="collapse" aria-expanded="false" aria-controls="@id">
+                        @*<span class="fa fa-chevron-down text-primary"></span>*@
+                        <span class="fa fa-upload pr-1"> | </span>
+                        <span class="fa fa-edit pr-1"> | </span>
+                        <span class="fa fa-trash"></span>
+                    </a>
+                </td>
+
+            </tr>
+            }
+
+    </table>
+
+    <hr />
+
+    <p class="text-secondary">
+        Click <span class="fa fa-upload pr-1"></span> to upload video playlist
+    </p>
+    <p class="text-secondary">
+        Click <span class="fa fa-edit pr-1"></span> to edit topic details
+    </p>
+    <p class="text-secondary">
+        Click <span class="fa fa-trash"></span> to delete topic and it's playlist
+    </p>
+</div>

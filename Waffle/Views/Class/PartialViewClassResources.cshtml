@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Waffle.Data.ClassResources>
+
+
+
+<div id="allresources">
+
+    <table class="table">
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    file Icon here
+                </td>
+                <td>
+                    <a href="#" class="btn btn-outline-success"><span class="fa fa-download"></span>Download</a>
+                </td>
+            </tr>
+            }
+
+    </table>
+
+
+</div>
+
+
+
